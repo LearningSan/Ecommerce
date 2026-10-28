@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+[data-sonner-toast].product-detail-cartToast {
+  transform: translateY(90px);
+}
