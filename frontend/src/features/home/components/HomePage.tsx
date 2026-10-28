@@ -5,37 +5,47 @@ import { NewArrivalsSection } from "./NewArrivalsSection";
 import { PromotionSection } from "../../promotion/components/PromotionSection";
 import { CategoryProductSections } from "./CategoryProductSections";
 import { TrustBadges } from "@/components/common/TrustBadges";
+import { SectionErrorBoundary } from "./common/SectionErrorBoundary";
+
+// Các import section hiện tại giữ nguyên.
 
 export function HomePage() {
   return (
     <div className="bg-gray-50/40 min-h-screen">
-      {/* Banner chính */}
-      <HeroSection />
+      <SectionErrorBoundary>
+        <HeroSection />
+      </SectionErrorBoundary>
 
-      {/* Cam kết thương hiệu */}
-      <TrustBadges />
+      <SectionErrorBoundary>
+        <TrustBadges />
+      </SectionErrorBoundary>
 
-      {/* Flash Sale (Nền màu đỏ/hồng sẫm tạo sự giục giã) */}
       <div className="my-8">
-        <FlashSaleSection />
+        <SectionErrorBoundary>
+          <FlashSaleSection />
+        </SectionErrorBoundary>
       </div>
 
-      {/* Bán chạy nhất */}
       <div className="bg-white py-6 shadow-sm my-8">
-        <BestSellingSection />
+        <SectionErrorBoundary>
+          <BestSellingSection />
+        </SectionErrorBoundary>
       </div>
 
-      {/* Khuyến mãi Hot Banner */}
       <div className="my-8">
-        <PromotionSection />
+        <SectionErrorBoundary>
+          <PromotionSection />
+        </SectionErrorBoundary>
       </div>
 
-      {/* Sản phẩm theo danh mục */}
-      <CategoryProductSections />
+      <SectionErrorBoundary>
+        <CategoryProductSections />
+      </SectionErrorBoundary>
 
-      {/* Hàng mới về */}
       <div className="bg-white py-6 shadow-sm my-8">
-        <NewArrivalsSection />
+        <SectionErrorBoundary>
+          <NewArrivalsSection />
+        </SectionErrorBoundary>
       </div>
     </div>
   );
